@@ -1,0 +1,29 @@
+<div class="">
+  <button [routerLink]="['add']">Add new book</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Year of Publish</th>
+        <th>Actions</th>
+        <!-- Added Actions column -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books; let i = index">
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.auther }}</td>
+        <td>{{ book.genre }}</td>
+        <td>{{ book.publishedYear }}</td>
+        <td>
+          <button [routerLink]="['/edit', book.id]">Edit</button>
+          <button (click)="deleteBook(book.id, i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
