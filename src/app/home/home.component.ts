@@ -20,14 +20,9 @@ export class HomeComponent implements OnInit {
 
   deleteBook(bookId: number, index: number): void {
     if (confirm('Are you sure you want to delete this book?')) {
-      this.bookService.DeleteBook(bookId).subscribe({
-        next: () => {
-          alert('Book deleted successfully!');
-          this.books.splice(index, 1); // Update the UI by removing the book
-        },
-        error: (err) => {
-          console.error('Error deleting book:', err);
-        },
+      this.bookService.DeleteBook(bookId).subscribe((data) => {
+        alert('Book deleted successfully!');
+        this.books.splice(index, 1); // Update the UI by removing the book
       });
     }
   }

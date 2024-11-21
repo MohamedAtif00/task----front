@@ -25,6 +25,6 @@ export class BookService {
 
   // Delete a book by ID
   DeleteBook(bookId: number) {
-    return this._http.delete<void>(`${this._endpoint}/${bookId}`);
+    return this._http.delete(`${this._endpoint}/${bookId}`);
   }
 }

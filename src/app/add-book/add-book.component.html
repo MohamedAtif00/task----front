@@ -3,56 +3,23 @@
     <div class="form-group">
       <label for="title">Title</label>
       <input id="title" formControlName="title" type="text" />
-      <div
-        class="error"
-        *ngIf="
-          formGroup.get('title')?.invalid && formGroup.get('title')?.touched
-        "
-      >
-        Title is required.
-      </div>
     </div>
 
     <div class="form-group">
       <label for="author">Author</label>
       <input id="author" formControlName="author" type="text" />
-      <div
-        class="error"
-        *ngIf="
-          formGroup.get('author')?.invalid && formGroup.get('author')?.touched
-        "
-      >
-        Author is required.
-      </div>
     </div>
 
     <div class="form-group">
       <label for="genre">Genre</label>
       <input id="genre" formControlName="genre" type="text" />
-      <div
-        class="error"
-        *ngIf="
-          formGroup.get('genre')?.invalid && formGroup.get('genre')?.touched
-        "
-      >
-        Genre is required.
-      </div>
     </div>
 
     <div class="form-group">
       <label for="publishedYear">Published Year</label>
       <input id="publishedYear" formControlName="publishedYear" type="number" />
-      <div
-        class="error"
-        *ngIf="
-          formGroup.get('publishedYear')?.invalid &&
-          formGroup.get('publishedYear')?.touched
-        "
-      >
-        Published Year is required and must be a valid 4-digit year.
-      </div>
     </div>
 
-    <button type="submit" [disabled]="formGroup.invalid">Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </div>
